@@ -38,7 +38,7 @@ app.use(morgan('common'))
 app.use(express.json())
 
 app.use('/', DefaultRouter)
-app.use('/', UsersRouter)
+app.use('/users', UsersRouter)
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
