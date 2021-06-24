@@ -1,9 +1,18 @@
 import express from 'express'
 import morgan from 'morgan'
+import winston from 'winston'
 import { Db, MongoClient } from 'mongodb'
 import assert from 'assert/strict'
 import DefaultRouter from './http/routes/index'
 import UsersRouter from './http/routes/users'
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.colorize(),
+    winston.format.json()
+  )
+})
 
 // TODO: Use this in other places
 let db: Db
