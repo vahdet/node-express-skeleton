@@ -10,7 +10,8 @@ const config: InitialOptionsTsJest = {
   transform: {
     ...tsjPreset.transform
     // [...]
-  }
+  },
+  setupFiles: ['dotenv/config'] // if the project utilizes a .env file
 }
 
 export default config
